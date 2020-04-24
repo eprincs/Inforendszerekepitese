@@ -1,0 +1,39 @@
+<p>order works!</p>
+<p>customer-add works!</p>
+
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+
+  <select formControlName="product" (change)="updateSelected($event.target.value)">
+    <option *ngFor="let product of Products" value={{product._id}}>{{product.name}}</option>
+  </select>
+
+  <div>
+    <label for="quantity">
+      Quantity
+    </label>
+    <input id="quantity" type="text" formControlName="quantity">
+  </div>
+
+  <button class="button" type="submit">List and Add</button>
+</form>
+
+<!--<div *ngFor="let product of Products">
+<p>{{product.name}}</p>
+<p *ngFor="let prod of product.products">{{prod.name}}</p>
+<p *ngFor="let part of product.parts">{{part.name}}</p>
+</div>-->
+
+<!--<div *ngIf="Product">
+  <p>{{Product.name}}</p>
+  <p *ngFor="let prod of Product.products">{{prod.name}}</p>
+  <p *ngFor="let part of Product.parts">{{part.name}}</p>
+</div>-->
+
+

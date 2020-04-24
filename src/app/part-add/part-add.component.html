@@ -1,0 +1,35 @@
+<p>Műxök már, ne aggódj anyu!</p>
+
+<form [formGroup]="partForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="storageid">
+      StorageId
+    </label>
+    <input id="storageid" type="text" formControlName="storageid">
+  </div>
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label for="date">
+      Date
+    </label>
+    <input id="date" type="text" formControlName="date">
+  </div>
+
+  <div>
+    <label for="quantity">
+      Quantity
+    </label>
+    <input id="quantity" type="text" formControlName="quantity">
+  </div>
+  <button class="button" type="submit">Purchase</button>
+</form>
+
+
+

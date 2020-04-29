@@ -1,0 +1,22 @@
+
+<table>
+  <tr >
+    <th >Storage ID</th>
+    <th >Part name</th>
+    <th >Date</th>
+    <th >Quantity</th>
+    <th ></th>
+  </tr>
+  <tr *ngFor="let part of Parts; let i = index ">
+    <td >{{part._id}}</td>
+    <td >{{part.name}}</td>
+    <td >{{part.date | date: 'dd.MM.yyyy'}}</td>
+    <td >{{part.quantity}}</td>
+    <td >
+      <button (click)="removePart(part, i)" type="button" class="minibutton">Delete</button>
+      <button (click)="minusPart(part, i)" type="button" class="minibutton">-</button>
+      <button (click)="plusPart(part, i)" type="button" class="minibutton">+</button>
+    </td>
+  </tr>
+</table>
+

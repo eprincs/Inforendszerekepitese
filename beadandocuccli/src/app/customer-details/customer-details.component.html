@@ -1,0 +1,11 @@
+
+<table>
+  <tr >
+    <th >Customer name</th>
+    <th >Address</th>
+  </tr>
+  <tr *ngFor="let customer of Customers; let i = index ">
+    <td >{{customer.name}}</td>
+    <td >{{customer.address}}</td>
+  </tr>
+</table>

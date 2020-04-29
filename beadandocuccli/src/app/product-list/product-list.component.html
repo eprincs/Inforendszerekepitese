@@ -1,0 +1,28 @@
+
+<table>
+  <tr>
+    <th>Product name</th>
+    <th>
+      <button (click)="showDetails()" type="button" class="minibutton">Show details</button>
+    </th>
+  </tr>
+  <tr *ngFor="let product of Products; let i = index ">
+    <td>{{product.name}}
+    <div *ngIf="visible " >
+      <div *ngFor="let pp of product.products" class="nothing">
+        {{pp.product.name}}
+
+      </div>
+      <div *ngFor="let p of product.parts" class="nothing">
+        {{p.part.name}}
+      </div>
+
+      </div></td>
+    <td  >
+      <button (click)="removeProduct(product, i)" type="button" class="minibutton">Delete</button>
+
+    </td>
+  </tr>
+</table>
+
+

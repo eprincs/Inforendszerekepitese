@@ -1,0 +1,60 @@
+
+
+<div>
+  <table>
+    <tr >
+      <th >Part name</th>
+      <th ></th>
+    </tr>
+    <tr *ngFor="let part of Parts">
+      <td>{{part.name}}</td>
+      <td >
+        <button  (click)="addPart(part)" type="button" class="minibutton">Add</button>
+      </td>
+    </tr>
+
+    <tr *ngFor="let product of Products">
+      <td>{{product.name}}</td>
+      <td>        <button (click)="addProduct(product)" type="button" class="minibutton">Add</button></td>
+    </tr>
+  </table>
+</div>
+
+<div>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+
+
+      <table>
+        <!--<tr >
+          <th >Part name</th>
+          <th >Count</th>
+        </tr>-->
+        <tr *ngFor="let part of formParts">
+          <td>{{part.part.name}}     </td>
+          <td>{{part.count}}</td>
+        </tr>
+        <tr *ngFor="let product of formProducts">
+          <td>{{product.product.name}}    </td>
+          <td>{{product.count}}</td>
+        </tr>
+      </table>
+
+
+  <button class="button" type="submit">Create</button>
+
+</form></div>
+
+
+
+
+
+
+
+
+

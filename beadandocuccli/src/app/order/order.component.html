@@ -1,0 +1,47 @@
+
+
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="customer">
+      Customer name
+    </label>
+    <select formControlName="name" (change)="updateCustomerSelected($event.target.value)">
+      <option *ngFor="let customer of Customers" value={{customer._id}}>{{customer.name}}</option>
+    </select>
+
+
+    <label for="product">
+      Product
+    </label>
+    <select formControlName="product" (change)="updateSelected($event.target.value)">
+      <option *ngFor="let product of Products" value={{product._id}}>{{product.name}}</option>
+    </select>
+
+
+    <label for="quantity">
+      Quantity
+    </label>
+    <input id="quantity" (change)="updateInput()" type="text" formControlName="quantity" placeholder="1">
+
+
+  <button class="button" type="submit">List and Add</button>
+</div>
+</form>
+
+<table>
+  <tr >
+    <th >Storage ID</th>
+    <th >Part name</th>
+    <th >Count</th>
+    <th >Storage quantity</th>
+
+  </tr>
+  <tr *ngFor="let part of Parts; let i = index ">
+    <td >{{part.part._id}}</td>
+    <td >{{part.part.name}}</td>
+    <td >{{part.count}}</td>
+    <td >{{part.part.quantity}}</td>
+  </tr>
+</table>
+
+
